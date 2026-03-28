@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -10,13 +11,12 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     {/* Logo */}
-                    <motion.a
-                        whileHover={{ scale: 1.05 }}
-                        href="#"
+                    <Link
+                        to="/"
                         className="text-xl font-headline font-bold text-[#81ecff] hover:opacity-80 transition-opacity"
                     >
                         Dinushka<span className="text-[#e966ff]">.</span>dev
-                    </motion.a>
+                    </Link>
 
                     {/* Links */}
                     <div className="flex flex-wrap justify-center gap-6">

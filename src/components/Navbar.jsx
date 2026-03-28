@@ -1,37 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Skills', href: '/skills' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const location = useLocation();
+  const activeSection = location.pathname;
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-
-      // Determine active section
-      const sections = navLinks.map(link => link.href.substring(1));
-      let currentSection = '';
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            currentSection = `#${section}`;
-            break;
-          }
-        }
-      }
-      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -46,8 +32,8 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
-            ? 'bg-[#0a0a0a]/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
-            : 'bg-transparent'
+          ? 'bg-[#0a0a0a]/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
+          : 'bg-transparent'
           }`}
       >
         <div className="flex justify-between items-center px-6 md:px-12 py-4 max-w-7xl mx-auto">
@@ -57,18 +43,16 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map(link => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
-                className={`text-sm transition-all duration-300 font-medium relative group ${
-                  activeSection === link.href ? 'text-[#81ecff]' : 'text-[#adaaaa] hover:text-[#81ecff]'
-                }`}
+                to={link.href}
+                className={`text-sm transition-all duration-300 font-medium relative group ${activeSection === link.href ? 'text-[#81ecff]' : 'text-[#adaaaa] hover:text-[#81ecff]'
+                  }`}
               >
                 {link.label}
-                <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#81ecff] transition-all duration-300 ${
-                  activeSection === link.href ? 'w-full opacity-100' : 'w-0 group-hover:w-full opacity-0 group-hover:opacity-100'
-                }`} />
-              </a>
+                <span className={`absolute -bottom-1 left-0 h-[2px] bg-[#81ecff] transition-all duration-300 ${activeSection === link.href ? 'w-full opacity-100' : 'w-0 group-hover:w-full opacity-0 group-hover:opacity-100'
+                  }`} />
+              </Link>
             ))}
           </div>
 
@@ -80,12 +64,12 @@ const Navbar = () => {
               </span>
               <span className="text-xs text-[#adaaaa] tracking-wider uppercase">Available</span>
             </div>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="hidden md:inline-flex bg-[#81ecff] text-[#005762] font-bold py-2.5 px-6 rounded-xl text-sm hover:bg-[#81ecff]/90 transition-all neon-glow-primary active:scale-95"
             >
               Hire Me
-            </a>
+            </Link>
             {/* Mobile menu btn */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -114,24 +98,23 @@ const Navbar = () => {
             className="fixed inset-0 z-40 bg-[#0a0a0a]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {navLinks.map(link => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`text-3xl font-headline font-bold transition-colors ${
-                  activeSection === link.href ? 'text-[#81ecff]' : 'text-white hover:text-[#81ecff]'
-                }`}
+                className={`text-3xl font-headline font-bold transition-colors ${activeSection === link.href ? 'text-[#81ecff]' : 'text-white hover:text-[#81ecff]'
+                  }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               onClick={() => setMobileOpen(false)}
               className="bg-[#81ecff] text-[#005762] font-bold py-3 px-8 rounded-xl mt-4"
             >
               Hire Me
-            </a>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
