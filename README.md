@@ -1,16 +1,61 @@
-# React + Vite
+# Modern Creative Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A cinematic, high-performance portfolio website built with **React 19**, **Vite 7**, and **Tailwind CSS 4**. Designed with a focus on premium aesthetics, smooth animations, and a seamless user experience.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Cinematic Hero**: Ambient lighting, tech-hologram animations, and smooth profile blending.
+- **Micro-Animations**: Extensive use of **Framer Motion** for scroll-linked reveals and entrance effects.
+- **Glassmorphism Design**: Modern UI with translucent cards and neon glow accents.
+- **Modern Tech Stack**: Uses the latest **Tailwind CSS 4** (Vite-first) for lightning-fast styling.
+- **Responsive**: Fully optimized for mobile, tablet, and desktop viewing.
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 7](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion 12](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
-## Expanding the ESLint configuration
+## 🛠️ Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run this project locally:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Dinushka20/Portfolio.git
+   cd Portfolio
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+## 🌐 Deployment to Vercel
+
+This project is optimized for deployment on Vercel.
+
+1. Connect your GitHub repository to Vercel.
+2. Vercel will automatically detect the **Vite** framework.
+3. Use the following build settings:
+   - **Framework Preset**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+   - **Install Command**: `npm install` (standard) or `npm install --legacy-peer-deps` (if peer conflicts occur).
+
+---
+
+Developed by **Dinushka Sandeepa**
