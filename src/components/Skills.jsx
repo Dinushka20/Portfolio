@@ -3,33 +3,33 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 const skills = [
     // Languages
-    { 
-        name: 'Java', 
+    {
+        name: 'Java',
         customUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-        color: '#f8981d', 
-        category: 'Language', 
-        size: 'small' 
+        color: '#f8981d',
+        category: 'Language',
+        size: 'small'
     },
     { name: 'TypeScript', slug: 'typescript', color: '#3178c6', category: 'Language', size: 'small' },
     { name: 'JavaScript', slug: 'javascript', color: '#f7df1e', category: 'Language', size: 'small' },
-    { 
-        name: 'C#', 
+    {
+        name: 'C#',
         customUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
-        color: '#a179dc', 
-        category: 'Language', 
-        size: 'small' 
+        color: '#a179dc',
+        category: 'Language',
+        size: 'small'
     },
-    
+
     // Frontend (Large)
     { name: 'React.js', slug: 'react', color: '#61dafb', category: 'Frontend', size: 'large', description: 'Advanced UI patterns & hooks' },
     { name: 'Next.js', slug: 'nextdotjs', color: '#ffffff', category: 'Frontend', size: 'medium', description: 'SSR & App Router' },
     { name: 'Tailwind', slug: 'tailwindcss', color: '#06b6d4', category: 'Frontend', size: 'medium' },
-    
+
     // Backend (Medium)
     { name: 'Spring Boot', slug: 'springboot', color: '#6db33f', category: 'Backend', size: 'large', description: 'Microservices & Enterprise' },
     { name: 'ASP.NET', slug: 'dotnet', color: '#512bd4', category: 'Backend', size: 'medium' },
     { name: 'Node.js', slug: 'nodedotjs', color: '#339933', category: 'Backend', size: 'medium' },
-    
+
     // Tools & DB
     { name: 'MySQL', slug: 'mysql', color: '#4479a1', category: 'Tools', size: 'medium' },
     { name: 'Firebase', slug: 'firebase', color: '#ffca28', category: 'Tools', size: 'small' },
@@ -89,7 +89,7 @@ const SkillCard = ({ name, slug, customUrl, color, size, description, category }
                 className="absolute inset-0 bg-[#121212]/50 backdrop-blur-xl border border-white/5 rounded-[2rem] p-6 flex flex-col justify-center items-center transition-all duration-500 group-hover:bg-[#1a1a1a]/80 group-hover:border-white/10"
             >
                 {/* Brand Color Ambient Glow */}
-                <div 
+                <div
                     className="absolute inset-x-0 bottom-0 h-1/2 opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-[60px] rounded-full"
                     style={{ background: color }}
                 />
@@ -118,7 +118,7 @@ const SkillCard = ({ name, slug, customUrl, color, size, description, category }
                 </div>
 
                 {/* Corner Accents */}
-                <div 
+                <div
                     className="absolute top-6 right-6 w-1.5 h-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
                     style={{ background: color }}
                 />
@@ -145,7 +145,7 @@ const Skills = () => {
                             <span className="text-xs tracking-[0.4em] uppercase text-[#81ecff] font-bold">Expertise</span>
                             <h2 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mt-4 text-white">
                                 Technical <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#81ecff] via-white to-[#e966ff]">Arsenal.</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#81ecff] via-white to-[#e966ff]">Stack.</span>
                             </h2>
                         </motion.div>
                     </div>
@@ -156,7 +156,7 @@ const Skills = () => {
                         transition={{ delay: 0.3 }}
                         className="text-[#adaaaa] max-w-md text-base lg:text-lg leading-relaxed lg:text-right"
                     >
-                        Developing high-performance, scalable solutions with 
+                        Developing high-performance, scalable solutions with
                         industry-leading technologies and modern design patterns.
                     </motion.p>
                 </div>
