@@ -39,7 +39,6 @@
   }
 
   html {
-    scroll-behavior: smooth;
     scroll-padding-top: 80px;
   }
 
@@ -49,8 +48,17 @@
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
     line-height: 1.6;
+    /* Prevent iOS rubber-banding from fighting with scroll sections */
+    overscroll-behavior: none;
+  }
+
+  /* Promote animated ambient blobs to GPU compositor to stop blocking scroll */
+  .animate-drift,
+  .animate-drift-slow,
+  .animate-drift-reverse {
+    will-change: transform;
+    contain: layout style;
   }
 
   /* Noise texture overlay on the body */

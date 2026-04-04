@@ -129,7 +129,7 @@ const SkillCard = ({ name, slug, customUrl, color, size, description, category }
 
 const Skills = () => {
     return (
-        <section className="min-h-screen py-32 px-6 md:px-12 relative overflow-hidden" id="skills">
+        <section className="min-h-screen py-32 px-6 md:px-12 relative overflow-clip" id="skills">
             {/* Ambient Lighting */}
             <div className="absolute top-[20%] left-[-10%] w-[800px] h-[800px] bg-[#81ecff]/5 blur-[200px] rounded-full pointer-events-none animate-pulse"></div>
             <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#e966ff]/5 blur-[180px] rounded-full pointer-events-none animate-drift-slow"></div>
@@ -140,7 +140,7 @@ const Skills = () => {
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                         >
                             <span className="text-xs tracking-[0.4em] uppercase text-[#81ecff] font-bold">Expertise</span>
                             <h2 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mt-4 text-white">
@@ -152,7 +152,7 @@ const Skills = () => {
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: false, amount: 0.2 }}
                         transition={{ delay: 0.3 }}
                         className="text-[#adaaaa] max-w-md text-base lg:text-lg leading-relaxed lg:text-right"
                     >
@@ -168,7 +168,7 @@ const Skills = () => {
                             key={skill.name}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false, amount: 0.2 }}
                             transition={{ delay: index * 0.05, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             className={`${skill.size === 'large' ? 'col-span-full md:col-span-2 lg:col-span-6' : skill.size === 'medium' ? 'col-span-1 md:col-span-1 lg:col-span-3' : 'col-span-1 md:col-span-1 lg:col-span-2'}`}
                         >

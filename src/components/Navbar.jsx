@@ -13,7 +13,17 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-  const activeSection = location.pathname;
+  const [activeSection, setActiveSection] = useState(location.pathname);
+
+  useEffect(() => {
+    setActiveSection(location.pathname);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleNavReplace = (e) => setActiveSection(e.detail);
+    window.addEventListener('navreplace', handleNavReplace);
+    return () => window.removeEventListener('navreplace', handleNavReplace);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -151,7 +151,7 @@ const cardVariants = {
 
 const Projects = () => {
     return (
-        <section className="min-h-screen py-32 px-6 md:px-12 relative overflow-hidden" id="projects">
+        <section className="min-h-screen py-32 px-6 md:px-12 relative overflow-clip" id="projects" style={{ overflowClipMargin: '20px' }}>
             {/* Ambient */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#81ecff]/4 blur-[180px] rounded-full pointer-events-none animate-drift-slow"></div>
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#e966ff]/3 blur-[150px] rounded-full pointer-events-none animate-drift-reverse"></div>
@@ -160,7 +160,7 @@ const Projects = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, amount: 0.1 }}
                     transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
@@ -176,7 +176,7 @@ const Projects = () => {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: false, amount: 0.05 }}
                     className="space-y-8"
                 >
                     {projects.map((project, index) => (

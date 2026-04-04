@@ -10,14 +10,26 @@ const ParticleBackground = () => {
         let animationId;
         let particles = [];
 
-        const resize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = document.body.scrollHeight;
+        let lastWidth = window.innerWidth;
+        let lastHeight = window.innerHeight;
+
+        const resize = (force = false) => {
+            const currentWidth = window.innerWidth;
+            const currentHeight = window.innerHeight;
+            
+            // Only resize if width changes significantly (e.g., orientation change) 
+            // or if we force it on init, to prevent mobile scroll-bar height changes from stuttering
+            if (force || Math.abs(currentWidth - lastWidth) > 50) {
+                canvas.width = currentWidth;
+                canvas.height = currentHeight;
+                lastWidth = currentWidth;
+                lastHeight = currentHeight;
+            }
         };
 
-        const resizeObserver = new ResizeObserver(() => resize());
+        const resizeObserver = new ResizeObserver(() => resize(false));
         resizeObserver.observe(document.body);
-        resize();
+        resize(true);
 
         const particleCount = Math.min(80, Math.floor(window.innerWidth / 20));
 

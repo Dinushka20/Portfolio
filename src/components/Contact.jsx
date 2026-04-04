@@ -16,7 +16,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="min-h-screen py-32 px-6 md:px-12 relative overflow-hidden" id="contact">
+        <section className="min-h-screen py-32 px-6 md:px-12 relative overflow-clip" id="contact">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#81ecff]/3 blur-[200px] rounded-full pointer-events-none animate-drift-slow"></div>
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#e966ff]/4 blur-[150px] rounded-full pointer-events-none animate-drift-reverse"></div>
 
@@ -33,7 +33,7 @@ const Contact = () => {
                     style={{ left: item.x, top: item.y }}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 0.08 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.1 }}
                     transition={{ delay: item.delay }}
                 >
                     <motion.span
@@ -53,7 +53,7 @@ const Contact = () => {
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: false, amount: 0.1 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="flex-1 space-y-8"
                     >
@@ -146,7 +146,7 @@ const Contact = () => {
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: false, amount: 0.1 }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
                         className="flex-1 w-full max-w-lg"
                     >

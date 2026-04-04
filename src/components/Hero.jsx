@@ -43,7 +43,7 @@ const Hero = () => {
     ];
 
     return (
-        <section className="relative min-h-screen flex overflow-x-hidden">
+        <section className="relative min-h-screen flex" id="hero">
             {/* Ambient background */}
             <div className="absolute inset-0 -z-10">
                 <div className="absolute top-[-20%] right-[10%] w-[600px] h-[600px] bg-[#81ecff]/6 blur-[180px] rounded-full animate-drift"></div>
