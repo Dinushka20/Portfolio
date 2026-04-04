@@ -3,12 +3,36 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
-        <footer className="relative py-16 px-6 md:px-12 border-t border-white/5">
-            {/* Gradient line at top */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#81ecff]/20 to-transparent"></div>
+        <footer className="relative pt-20 pb-10 px-6 md:px-12">
+            {/* Gradient top separator */}
+            <div className="absolute top-0 left-0 right-0 h-[1px]">
+                <div className="w-full h-full bg-gradient-to-r from-transparent via-[#81ecff]/20 to-transparent" />
+            </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
+                {/* Back to top */}
+                <div className="flex justify-center mb-12">
+                    <motion.button
+                        onClick={scrollToTop}
+                        whileHover={{ y: -4, scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group flex flex-col items-center gap-2 text-[#adaaaa] hover:text-[#81ecff] transition-colors"
+                    >
+                        <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:border-[#81ecff]/30 group-hover:bg-[#81ecff]/5 transition-all">
+                            <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-bold">Back to top</span>
+                    </motion.button>
+                </div>
+
+                {/* Main footer content */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     {/* Logo */}
                     <Link

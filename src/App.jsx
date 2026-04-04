@@ -10,6 +10,16 @@ import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 import ScrollToPath from './components/ScrollToPath';
 
+const SectionDivider = () => (
+  <motion.div
+    initial={{ opacity: 0, scaleX: 0 }}
+    whileInView={{ opacity: 1, scaleX: 1 }}
+    viewport={{ once: false, amount: 0.5 }}
+    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+    className="gradient-mesh-divider max-w-7xl mx-auto my-0"
+  />
+);
+
 function App() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#81ecff]/30 selection:text-white overflow-x-hidden relative">
@@ -19,42 +29,13 @@ function App() {
 
       <main className="relative z-10">
         <Hero />
-
-        {/* Gradient mesh dividers between sections - Animated on scroll */}
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="gradient-mesh-divider max-w-7xl mx-auto"
-        />
+        <SectionDivider />
         <Projects />
-
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="gradient-mesh-divider max-w-7xl mx-auto"
-        />
+        <SectionDivider />
         <Skills />
-
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="gradient-mesh-divider max-w-7xl mx-auto"
-        />
+        <SectionDivider />
         <Experience />
-
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="gradient-mesh-divider max-w-7xl mx-auto"
-        />
+        <SectionDivider />
         <Contact />
       </main>
 

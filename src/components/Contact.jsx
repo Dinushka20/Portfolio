@@ -16,7 +16,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="min-h-screen py-32 px-6 md:px-12 relative overflow-clip" id="contact">
+        <section className="py-32 px-6 md:px-12 relative overflow-clip" id="contact">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#81ecff]/3 blur-[200px] rounded-full pointer-events-none animate-drift-slow"></div>
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#e966ff]/4 blur-[150px] rounded-full pointer-events-none animate-drift-reverse"></div>
 

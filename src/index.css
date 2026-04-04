@@ -155,7 +155,7 @@
 
   /* Gradient mesh divider */
   .gradient-mesh-divider {
-    height: 120px;
+    height: 60px;
     position: relative;
     overflow: hidden;
   }

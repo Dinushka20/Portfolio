@@ -119,7 +119,7 @@ const Hero = () => {
                                 initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
                                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                                 transition={{ delay: 0.5, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                                className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-extrabold tracking-tight leading-[1] lg:whitespace-nowrap"
+                                className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-extrabold tracking-tight leading-[1] lg:whitespace-nowrap"
                                 style={{ fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif" }}
                             >
                                 <span className="text-white">Dinushka </span>
@@ -163,7 +163,7 @@ const Hero = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </Link>
-                            <a href="/Dinushka_Sandeepa_CV.pdf" download className="text-white font-bold py-4 px-9 rounded-xl flex items-center gap-3 border-2 border-white/20 hover:border-white/40 hover:bg-white/5 transition-all active:scale-95 text-base lg:text-lg">
+                            <a href="/Dinushka_Sandeepa_CV.pdf" download className="text-white font-bold py-4 px-9 rounded-xl flex items-center gap-3 border border-white/15 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_25px_rgba(255,255,255,0.08)] transition-all active:scale-95 text-base lg:text-lg">
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
